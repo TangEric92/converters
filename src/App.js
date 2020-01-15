@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Rates from "./routes/Rates";
+import Temperature from "./routes/Temperature";
 
 function App() {
+  const [tab, setTab] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <select value={tab} onChange={e => setTab(parseInt(e.target.value))}>
+          <option value={0}>Rates</option>
+          <option value={1}>Temperature</option>
+        </select>
       </header>
+      {tab === 0 && <Rates />}
+      {tab !== 0 && <Temperature />}
     </div>
   );
 }
