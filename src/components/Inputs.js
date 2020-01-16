@@ -8,7 +8,11 @@ const Inputs = props => {
       <input type="number" value={value} onChange={handleInput} />
       <select value={rate} onChange={handleSelect}>
         {Object.keys(rates).map(nameRate => {
-          return <option value={nameRate}>{nameRate}</option>;
+          return (
+            <option key={nameRate} value={nameRate}>
+              {nameRate}
+            </option>
+          );
         })}
       </select>
     </div>

@@ -1,17 +1,21 @@
 import React from "react";
+import { Converter, Title } from "../components/";
 
-const Temperature = props => {
+const temperatures = {
+  celcius: 1.0,
+  fahrenheit: 33.8,
+  kelvin: 274.15
+};
+
+const Temperature = () => {
   return (
     <>
-      <h1>
-        <span role="img" aria-label="money">
-          💵
-        </span>
-        Temperature
-        <span role="img" aria-label="money">
-          💵
-        </span>
-      </h1>
+      <Title title="Temperature Converter" emoji="💵" />
+      <Converter
+        initialFrom={"celcius"}
+        initialTo={"kelvin"}
+        ratio={temperatures}
+      />
     </>
   );
 };

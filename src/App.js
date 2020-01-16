@@ -15,7 +15,7 @@ function App() {
         </select>
       </header>
       {tab === 0 && <Rates />}
-      {tab !== 0 && <Temperature />}
+      {tab === 1 && <Temperature />}
     </div>
   );
 }
